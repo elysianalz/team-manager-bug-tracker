@@ -1,0 +1,33 @@
+<section>
+  <h2>Recent Activity</h2>
+  <hr>
+
+  <table id="datatablesSimple">
+
+      <thead >
+        <tr>
+            <th >Date & time</th>
+            <th ">Action</th>
+            <th >User</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {% for activity in data.activities %}
+          <tr>
+            <td>{{ activity.datetime }}</td>
+            <td>{{ activity.acitvity_description }}</td>
+            <td>{{ activity.user_name }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+
+  </table>
+
+</section>
+
+<style media="screen">
+  th, td {
+    padding-right: 2rem;
+  }
+</style>
