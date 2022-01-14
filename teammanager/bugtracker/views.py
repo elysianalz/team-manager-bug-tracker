@@ -26,12 +26,16 @@ class ProjectsView(generic.ListView):
         }
         return data_set
 
-class ProjectView(generic.DetailView):
+class ProjectView(generic.ListView):
     template_name = "bugtracker/project.html"
     context_object_name = "data"
 
     def get_queryset(self):
-        return Project.objects.filter(pk=self.kwargs['pk'])
+        data_set = {
+            'project': Project.objects.get(pk=self.kwargs['pk']),
+            'bugs': Bug.objects.filter(project_id=self.kwargs['pk']),
+        }
+        return data_set
 
 class LoginView(generic.TemplateView):
     template_name = "bugtracker/login.html"
