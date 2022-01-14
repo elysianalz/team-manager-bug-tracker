@@ -1,0 +1,28 @@
+{% include './headpartial.html' %}
+{% include './nav.html' %}
+{% include './sidenav.html' %}
+<div id="layoutSidenav_content">
+    <main>
+        <div class="container-fluid px-4">
+          <h1 class="mt-4">{{ data.report_id.tite }}</h1>
+          <ol class="breadcrumb mb-4">
+              <li class="breadcrumb-item active">Projects</li>
+              <li class="breadcrumb-item active">{{ data.project_id.name }}</li>
+              <li class="breadcrumb-item active">{{ data.report_id.tite }}</li>
+          </ol>
+
+          <div class="row">
+            <p>Author: {{data.report_id.user_id.name}}</p>
+            <p>Published: {{data.report_id.datetime}}</p>
+            <p>status: {{data.status_id.status}}</p>
+            <p>flag: {{data.flag_id.flag}}</p>
+            <br><br>
+            <p>description:</p><br>
+            <p>{{data.report_id.description}}</p>
+          </div>
+
+        </div>
+    </main>
+    {% include './footer.html'%}
+</div>
+{% include './footpartial.html' %}
