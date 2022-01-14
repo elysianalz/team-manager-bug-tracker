@@ -1,0 +1,18 @@
+{% include './headpartial.html' %}
+{% include './nav.html' %}
+{% include './sidenav.html' %}
+<div id="layoutSidenav_content">
+    <main>
+        <div class="container-fluid px-4">
+          <h1 class="mt-4">{{ data.name }}</h1>
+          <ol class="breadcrumb mb-4">
+              <li class="breadcrumb-item active">Projects</li>
+              <li class="breadcrumb-item active">{{ data.name }}</li>
+              <li class="breadcrumb-item active">Report Bug</li>
+          </ol>
+
+        </div>
+    </main>
+    {% include './footer.html'%}
+</div>
+{% include './footpartial.html' %}
