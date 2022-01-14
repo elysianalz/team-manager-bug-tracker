@@ -37,6 +37,13 @@ class ProjectView(generic.ListView):
         }
         return data_set
 
+class BugView(generic.DetailView):
+    template_name="bugtracker/bug.html"
+    context_object_name = "data"
+
+    def get_queryset(self):
+        return Bug.objects.filter(pk=self.kwargs['bpk'])
+
 class ReportBugView(generic.ListView):
     template_name = "bugtracker/bugreportform.html"
     context_object_name = "data"
